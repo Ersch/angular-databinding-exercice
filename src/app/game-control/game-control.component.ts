@@ -26,7 +26,8 @@ export class GameControlComponent implements OnInit {
   }
 
   emitEvent() {
-    this.incrementedNumber.emit(this.number + 1);
+    this.number++;
+    this.incrementedNumber.emit(this.number);
   }
 
 }
