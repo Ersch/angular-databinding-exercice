@@ -19,7 +19,7 @@
     </div>
   </div>
 </div>
-
+<p-messages [(value)]="msgs" [closable]="false"></p-messages>
 <br>
 <div class="container">
   <app-game-control (incrementedNumber)="onChange($event)"></app-game-control>
