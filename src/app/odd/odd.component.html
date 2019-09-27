@@ -1,1 +1,6 @@
-<p>odd works!</p>
+<div class="alert alert-info"
+     role="alert"
+     *ngFor="let number of inputNumber" [hidden]="number%2!=0">
+  <p>{{number}}</p>
+</div>
+
