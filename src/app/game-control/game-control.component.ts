@@ -9,7 +9,7 @@ export class GameControlComponent implements OnInit {
 
   number = 0;
   @Output() incrementedNumber = new EventEmitter<number>();
-  ref;
+  interval;
 
   constructor() {
   }
@@ -18,17 +18,15 @@ export class GameControlComponent implements OnInit {
   }
 
   startGame() {
-    this.ref = setInterval(() => this.emitEvent(), 1000);
+    this.interval = setInterval(() => this.emitEvent(), 1000);
   }
 
   stopGame() {
-    clearInterval(this.ref);
+    clearInterval(this.interval);
   }
 
   emitEvent() {
-    this.number++;
-    this.incrementedNumber.emit(this.number);
-    console.log('tick');
+    this.incrementedNumber.emit(this.number + 1);
   }
 
 }
